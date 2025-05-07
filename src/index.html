@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="h-[100vh] flex justify-center items-center bg-[#000000]">
+    <div
+      class="main-container bg-[#1f1435] text-white px-8 py-3.5 rounded-lg flex flex-col items-center"
+    >
+      <h1 class="mb-3">Quiz App</h1>
+      <div id="quiz-container" class="flex flex-col items-center">
+        <div id="question-container" class="flex flex-col gap-2 hidden">
+          <h2 id="question-text" class="mb-2 text-center">
+            <!-- Question will dynamically added here -->
+          </h2>
+          <!-- choices list -->
+          <ul
+            id="choices-list"
+            class="flex flex-col items-center gap-2 text-sm"
+          >
+            <!-- choices will dynamically added here -->
+          </ul>
+          <!-- Next Button -->
+          <div class="flex justify-center">
+            <button
+              id="next-btn"
+              class="bg-[#2e1959] p-[6px_10px] w-[150px] text-sm rounded-md cursor-pointer hidden hover:bg-[#492d81]"
+            >
+              Next Question
+            </button>
+          </div>
+        </div>
+
+        <!-- result container -->
+        <div
+          id="result-container"
+          class="flex flex-col items-center gap-1.5 hidden"
+        >
+          <h2>Your Score:</h2>
+          <p id="score"></p>
+          <button
+            id="restart-btn"
+            class="bg-[#2e1959] p-[6px_10px] w-[150px] text-sm rounded-md cursor-pointer hover:bg-[#492d81]"
+          >
+            Restart Quiz
+          </button>
+        </div>
+        <!-- start quiz button -->
+        <button
+          id="start-btn"
+          class="bg-[#2e1959] p-[6px_15px] rounded-md cursor-pointer hover:bg-[#492d81]"
+        >
+          Start Quiz
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
