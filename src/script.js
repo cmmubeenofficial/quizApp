@@ -62,19 +62,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // function to display question and choices
   function displayQuestionChoices() {
-    // console.log(currentQuestionIndex);
     choicesList.innerHTML = "";
     questionText.textContent = questionsList[currentQuestionIndex].question;
     questionsList[currentQuestionIndex].choices.forEach((choice) => {
       const LI = document.createElement("li");
       LI.classList.add(
-        "bg-[#2e1959]",
+        "bg-blue-100",
+        "text-blue-900",
+        "p-3",
+        "rounded-lg",
+        "border",
+        "border-blue-300",
         "w-full",
         "text-center",
-        "py-[2px]",
-        "rounded-sm",
         "cursor-pointer",
-        "hover:bg-[#5426af]"
+        "hover:bg-blue-200",
+        "transition-colors",
+        "duration-200"
       );
 
       LI.textContent = choice;
@@ -94,13 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedAnswerVar = e.target.textContent;
 
         allLIs.forEach((li) => {
-          li.classList.remove("bg-[#602dc5]");
-          li.classList.add("bg-[#2e1959]");
+          li.classList.remove("bg-teal-300", "border-teal-400");
+          li.classList.add("bg-blue-100", "border-blue-300");
         });
 
         // Step 2: Add selected class to the clicked one
-        e.target.classList.remove("bg-[#2e1959]");
-        e.target.classList.add("bg-[#602dc5]");
+        e.target.classList.remove("bg-blue-100", "border-blue-300");
+        e.target.classList.add("bg-teal-300", "border-teal-400");
 
         nextBtn.classList.remove("hidden");
         if (currentQuestionIndex < questionsList.length - 1) {
@@ -130,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // function to display the score
   function displayScore() {
-    // console.log(`your score is: ${score} out of ${questionsList.length}`)
     questionText.textContent = "";
     choicesList.innerHTML = "";
     questionContainer.classList.add("hidden");
@@ -140,12 +143,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // restart button functionality
   restartBtn.addEventListener("click", () => {
-    currentQuestionIndex = 0
-    score = 0
-    scoreContainer.textContent = ""
-    resultContainer.classList.add("hidden")
-    nextBtn.textContent = "Next Question"
-    nextBtn.classList.add("hidden")
-    startBtn.classList.remove("hidden")
-  })
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreContainer.textContent = "";
+    resultContainer.classList.add("hidden");
+    nextBtn.textContent = "Next Question";
+    nextBtn.classList.add("hidden");
+    startBtn.classList.remove("hidden");
+  });
 });
